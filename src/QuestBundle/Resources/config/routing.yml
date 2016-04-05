@@ -1,0 +1,70 @@
+quest_homepage:
+    path:     /
+    defaults: { _controller: QuestBundle:Main:index }
+article:
+        path:     /article/{key}/
+        defaults: { _controller: QuestBundle:Article:index }
+quest:
+        path:     /quest/{key}
+        defaults: { _controller: QuestBundle:Quest:index }
+schedule:
+        path: /schedule/{year}/{month}/{day}
+        defaults: { _controller: QuestBundle:Schedule:index, year: 2000, month: 01, day: 01 }
+        requirements:
+          year: \d+
+          month: \d+
+          day: \d+
+scheduleForm:
+        path: /schedule/buildForm
+        defaults: { _controller: QuestBundle:Schedule:form }
+
+login:
+        path: login
+        defaults: { _controller: QuestBundle:Profile:login }
+logout:
+        path: logout
+
+privateArticle:
+        path: /vilmins/articles/
+        defaults: { _controller: QuestBundle:PrivateArticle:index }
+privateArticleEdit:
+             path: /vilmins/articles/edit/{key}
+             defaults: { _controller: QuestBundle:PrivateArticle:edit }
+privateArticleAdd:
+             path: /vilmins/articles/add/
+             defaults: { _controller: QuestBundle:PrivateArticle:add }
+privateArticleDelete:
+             path: /vilmins/articles/delete/{key}
+             defaults: { _controller: QuestBundle:PrivateArticle:delete }
+
+privateQuest:
+        path: /vilmins/quest/
+        defaults: { _controller: QuestBundle:PrivateQuest:index }
+privateQuestEdit:
+             path: /vilmins/quest/edit/{key}/
+             defaults: { _controller: QuestBundle:PrivateQuest:edit }
+privateQuesteAdd:
+             path: /vilmins/quest/add/
+             defaults: { _controller: QuestBundle:PrivateQuest:add }
+privateQuestDelete:
+             path: /vilmins/quest/delete/{key}
+             defaults: { _controller: QuestBundle:PrivateQuest:delete }
+
+privateSchedule:
+        path: /vilmins/schedule/
+        defaults: { _controller: QuestBundle:PrivateSchedule:index }
+privateScheduleToday:
+        path: /vilmins/schedule/today/
+        defaults: { _controller: QuestBundle:PrivateSchedule:today }
+privateScheduleСonfirmed:
+        path: /vilmins/schedule/confirmed/
+        defaults: { _controller: QuestBundle:PrivateSchedule:confirmed }
+privateScheduleRejected:
+        path: /vilmins/schedule/rejected/
+        defaults: { _controller: QuestBundle:PrivateSchedule:rejected }
+privateScheduleReject:
+        path: /vilmins/schedule/reject/{key}/
+        defaults: { _controller: QuestBundle:PrivateSchedule:reject }
+privateScheduleConfirm:
+        path: /vilmins/schedule/confirm/{key}/
+        defaults: { _controller: QuestBundle:PrivateSchedule:confirm }

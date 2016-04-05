@@ -1,0 +1,226 @@
+@font-face{font-family: 'LCChalk';src: url('/fonts/LCChalk.eot?');src: url('/fonts/LCChalk.eot?#iefix') format('embeded-opentype'),url('/fonts/LCChalk.woff') format('woff'),url('/fonts/LCChalk.ttf')  format('truetype'),url('/fonts/LCChalk.svg#LCChalk') format('svg');font-weight: normal;font-style: normal;}
+
+img, body, p, ul, form, h1, h2, h3, h4, li, div
+{
+    margin:0;
+    padding:0;
+    border:0;
+    font-weight:normal;
+}
+p {
+    margin-bottom:20px;
+}
+a:link, a:hover, a:visited  {
+    color:#fff;
+    text-decoration:none;
+}
+body
+{
+	font-family:'LCChalk' , Courier, sans-serif;
+	font-size:20px;
+    color: #fff;
+    max-height:2250px;
+    background:url('/img/background.png') center top no-repeat  #080400;
+}
+div#wrapper
+{
+	margin-left:auto;
+	margin-right:auto;
+    width: 1040px;
+    padding: 0 100px;
+}
+div#header
+{
+    margin-top:15px;
+    height:50px;
+}
+div#clear {
+    clear:both;
+}
+div#menu {
+    font-size:18px;
+}
+div#content {
+    margin-top:20px;
+}
+div#logo
+{
+    width:100%;
+    text-align:center;
+}
+
+div#menu ul
+{
+    list-style-type: none;
+    margin: 0 auto;
+}
+div#menu li
+{
+    float: left;
+    width:25%;
+    text-align:center;
+    color:#fffeff;
+}
+
+div#footer
+{
+    clear:both;
+//  position:absolute;
+//    top:940px;
+    margin-top:50px;
+    font-size:15px;
+}
+
+.social-button {
+    margin-bottom:10px;
+}
+.center{
+    clear:left;
+    text-align:center;
+}
+
+.qu-quests {
+    text-align: center;
+}
+.qu-quests-table {
+    margin: auto;
+}
+.qu-quests-table .qu-quests-cell
+{
+    width:350px;
+    height: 350px;
+    #border: 10px transparent;
+    padding:10px;
+    color:#fffeff;
+}
+
+.qu-quests-table .qu-quests-cell_green {
+    background-color:#108813;
+}
+.qu-quests-table .qu-quests-cell_red {
+    background-color:#c30017;
+}
+.qu-quests-table .qu-quests-cell_yellow {
+    background-color:#ffc000;
+}
+.qu-quests-table .qu-quests-cell_blue {
+    background-color:#29308b;
+}
+.qu-quests-table .qu-quests-cell_orange {
+    background-color:#d3551d;
+}
+.qu-quests-cell a {
+    color:#fffeff;
+    text-decoration:none;
+}
+
+
+.qu-schedule-table {
+    width:100%;
+    font-size:12px;
+    border:0;
+}
+.qu-schedule-table-month_caption {
+    width:120px;
+}
+.qu-schedule-table-month_caption span {
+    color:#fffeff;
+}
+.qu-schedule-table-month_element {
+    width:30%;
+    text-align:center;
+}
+
+.qu-schedule-table-date_current {
+    background-color:#8f6801;
+    padding:2px 4px;
+}
+.qu-schedule-table__quest_title {
+    font-size:14px;
+    width:60px;
+}
+.qu-schedule-table-cell__quest_time {
+    font-size:9px;
+    height:44px;
+    color:#fffeff;
+    width:24px;
+    text-align:center;
+    margin:10px;
+    border-spacing: 2px;
+    box-shadow: 0 0 2px black, inset 0 0 3px black;
+}
+.qu-schedule-table-time {
+    display:inline-block;
+    width:24px;
+    position:relative;
+    left:-1px;
+    top:5px;
+    font-family:"Courier New", Courier, sans-serif;
+    font-size:10px;
+    margin:0 auto;
+
+}
+.qu-schedule-table-time__hidden {
+    display:none;
+}
+.qu-schedule-table-time__active {
+    cursor: pointer;
+}
+.qu-schedule-table-time__color-1 {
+    background-color: #393939;
+}
+.qu-schedule-table-time__color-2 {
+    background-color: #616161;
+}
+.qu-schedule-table-time__color-3 {
+    background-color: #7f7f7f;
+}
+.qu-schedule-table-time__color-4 {
+    background-color: #282828;
+}
+.qu-schedule-table-time__color-5 {
+    background-color: #4f4f4f;
+}
+.qu-schedule-table-time__color-6 {
+    background-color: #333333;
+    box-shadow: 0 0 5px black;
+}
+
+
+.ui-dialog .ui-dialog-title {
+    font-family: "LCChalk";
+    font-size:13px;
+    height:15px;
+}
+.ui-dialog .ui-widget-header {
+    background:gray;
+}
+.ui-dialog .ui-widget-content {
+    background:gray;
+}
+.ui-widget-content {
+    background:gray;
+}
+
+.ui-dialog {
+    font-size:13px !important;
+}
+td.left{
+    width:300px;
+}
+.ui-dialog div input {
+    right:10px;
+    position:relative;
+}
+
+.qu-quest__book-text {
+	font-size:19px;
+}
+
+.qu-quest__book-text:hover {
+	color:#8f6801;
+}
+
+.qu-schedule-table-cell__active {
+	cursor:pointer;
+}

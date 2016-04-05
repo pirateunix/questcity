@@ -1,0 +1,31 @@
+{{ form_start(form) }}
+   {{ form_errors(form) }}
+    <input type="hidden" name="time" value="{{ app.request.get('time')|escape }}">
+    <input type="hidden" name="quest" value="{{ app.request.get('quest')|escape }}">
+    <table>
+        <tr>
+            <td class="left"><label for="name">Имя <sup style="color:red">*</sup></label></td>
+            <td>{{ form_widget(form.name, {'attr': {'id': 'name', name: 'name'}}) }} </td>
+        </tr>
+        <tr>
+            <td class="left"><label for="phone">Телефон <sup style="color:red">*</sup></label></td>
+            <td>{{ form_widget(form.phone, {'attr': {'id': 'phone', name: 'phone'}}) }} </td>
+        </tr>
+        <tr>
+            <td class="left"><label for="vk">Ссылка вКонтакте</label></td>
+            <td>{{ form_widget(form.vk, {'attr': {'id': 'vk', name: 'vk'}}) }} </td>
+        </tr>
+        <tr>
+            <td class="left"><label for="email">email</label></td>
+            <td>{{ form_widget(form.email, {'attr': {'id': 'email', name: 'email'}}) }} </td>
+        </tr>
+        <tr>
+            <td class="left"><label for="cert">Номер сертификата</label></td>
+            <td>{{ form_widget(form.cert, {'attr': {'id': 'cert', name: 'cert'}}) }} </td>
+        </tr>
+        <tr><td class="center" colspan="2">
+                {{ form_widget(form.save, {'attr': {'name': 'send', 'id': 'send', 'type': 'submit'}, 'label': 'Забронировать'}) }}
+            </td>
+        </tr>
+    </table>
+    {{ form_end(form) }}

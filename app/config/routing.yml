@@ -1,0 +1,4 @@
+quest:
+    resource: "@QuestBundle/Resources/config/routing.yml"
+    prefix:   /
+

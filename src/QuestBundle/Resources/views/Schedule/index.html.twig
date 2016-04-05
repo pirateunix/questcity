@@ -1,0 +1,57 @@
+{% extends '::base.html.twig' %}
+
+{% block content %}
+  <div>
+     {% if app.request.get('success') is not empty %}<div style="margin-bottom:10px;text-align:center">Квест успешно забронирован, будем рады вас видеть!</div>{% endif %}
+
+      <div style="text-align:center;">Расписание на {{ currentDay }} {{ monthsRod[currentMonth] }}</div>
+
+      <table class="qu-schedule-table" style="background-color:#393939">
+         <td class="qu-schedule-table-month_caption"><span>месяц:</span></td>
+         {% for i in (currentMonth-1)..(currentMonth+1) %}
+         {% set month = i %}
+         {% if month == 0 %}
+         {% set month = 12 %}
+         {% endif %}
+         <td class="qu-schedule-table-month_element">
+            <a href="/schedule/{% if month < currentMonth-1 %}{{ currentYear+1 }}{% elseif month >= currentMonth+11 %}{{ currentYear-1 }}{% else %}{{ currentYear }}{%endif %}/{{ month }}/{% if month == currentMonth %}{{ currentDay }}{% else %}01{% endif %}"<span{% if month == currentMonth %} class="qu-schedule-table-date_current"{% endif %}>{{ months[month] }}</span></a>
+         </td>
+         {% endfor %}
+         </tr>
+      </table>
+
+      <table class="qu-schedule-table>" style="margin-bottom:20px;background-color:#393939">
+         <tr>
+            <td class="qu-schedule-table-month_caption"><span>число:</span></td>
+            {% for i in 1..numberOfDates %}
+            {% set isHolly = [i,currentMonth,currentYear]|join('-')|date("w") %}
+                {% if isHolly == 0 %}
+                {% set isHolly = 7 %}
+                {% endif %}
+            <td data="{{ isHolly }}"class="qu-schedule-table-date_element"><a href="/schedule/{{ currentYear }}/{{ currentMonth }}/{{ i }}"><span{% if i == currentDay %} class="qu-schedule-table-date_current"{% endif %} {% if isHolly > 5 and i != currentDay %}style="color:#8f6801"{% endif %}>{{ i }}</span></a></td>
+            {% endfor %}
+         </tr>
+      </table>
+
+      <table class="qu-schedule-table">
+         {% for quest in quests %}
+         <tr>
+            <td class="qu-schedule-table__quest_title"><a href="/quest/{{ quest.name }}/" title="{{ quest.title }}">{{ quest.title }}</a></td>
+            {% for time in range(quest.timeStart|date("U"),quest.timeEnd|date("U"), quest.step) %}
+            {% set isHolly = time|date("N") %}
+            <td {% if time in quest.booked %}data-booked="true"{% else %}data-booked="false"{% endif %} data-time="{{ time }}" data-quest="{{ quest.name }}" class="qu-schedule-table-cell__quest_time qu-schedule-table-time__color-{% if time in quest.booked %}3{% else %}1{% endif %} {% if time not in quest.booked %}qu-schedule-table-cell__active{% endif %}">
+            <span class="qu-schedule-table-time {% if time in quest.booked %}qu-schedule-table-time__hidden {% endif %} qu-schedule-table-time__active"{% if time in quest.booked %} data-booked="true"{% else %} data-booked="false"{% endif %}>{{ time|date("H:i") }}</span><br><span class="price" style="font-family:'Courier New';visibility:hidden;position:relative; {% if isHolly > 5 %}color:#bf9116;{% endif %}">{% if isHolly > 5 %}2500{% else %}2000{% endif %} р.</span>
+            </td>
+            {% endfor %}
+         </tr>
+         {% endfor %}
+      </table>
+   </div>
+   {% if article is not empty %}
+   <div>
+       {{ include(template_from_string(article.content)) }}
+   </div>
+   {% endif %}
+
+{% endblock %}
+

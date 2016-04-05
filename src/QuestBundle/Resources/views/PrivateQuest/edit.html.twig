@@ -1,0 +1,55 @@
+{% extends '::Private/base.html.twig' %}
+
+{% block content %}
+   {{ form_start(form) }}
+   {{ form_errors(form) }}
+   <form class="form-signin" role="form" action="" method="post">
+      <div class="modal-open">
+         <div class="modal-dialog" style="width:800px;">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h4 class="form-signin-heading">Редактирование квеста</h4>
+               </div>
+               <div class="modal-body">
+                  <div class="input-group input-group-sm">
+                     <span class="input-group-addon">Название</span>
+                     {{ form_widget(form.title, {'attr': {'class': 'form-control'}}) }}
+                  </div>
+
+                  <div class="input-group input-group-sm">
+                     <span class="input-group-addon">Текст "забронировать"</span>
+                     {{ form_widget(form.bookText, {'attr': {'class': 'form-control'}}) }}
+                  </div>
+                  <div class="input-group input-group-sm">
+                     <span class="input-group-addon">Время начала первого захода</span>
+                     {{ form_widget(form.timeStart, {'attr': {'class': 'form-control'}}) }}
+                  </div>
+
+                  <div class="input-group input-group-sm">
+                     <span class="input-group-addon">Время окончания работы квеста</span>
+                     {{ form_widget(form.timeEnd, {'attr': {'class': 'form-control'}}) }}
+                  </div>
+
+                  <div class="input-group input-group-sm">
+                     <span class="input-group-addon">Длительность квеста (сек)</span>
+                     {{ form_widget(form.step, {'attr': {'class': 'form-control'}}) }}
+                  </div>
+
+                  <div class="input-group input-group-sm">
+                     <span class="input-group-addon">Цвет плашки</span>
+                     {{ form_widget(form.color, {'attr': {'class': 'form-control'}}) }}
+                  </div>
+                  <p>
+                     {{ form_widget(form.text, {'attr': {'class': 'form-control', 'style': 'height:200px;'}}) }}
+                  </p>
+               </div>
+               <div class="modal-footer">
+                  {{ form_widget(form.save, {'attr': {'class': 'btn btn-lg btn-primary', 'type': 'submit'}, 'label': 'Сохранить'}) }}
+                  {{ form_end(form) }}
+                  <button name="send" class="btn btn-lg btn-danger _quest_cancel" type="button">Отмена</button>
+               </div>
+            </div><!-- /.modal-content -->
+         </div><!-- /.modal-dialog -->
+      </div><!-- /.modal -->
+   </form>
+{% endblock %}

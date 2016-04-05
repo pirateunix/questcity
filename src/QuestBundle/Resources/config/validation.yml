@@ -1,0 +1,35 @@
+QuestBundle\Document\Article:
+    properties:
+        content:
+            - NotBlank: ~
+
+QuestBundle\Document\Quest:
+    properties:
+        bookText:
+            - NotBlank: ~
+        name:
+                    - NotBlank: ~
+        text:
+                    - NotBlank: ~
+        title:
+                    - NotBlank: ~
+        color:
+                    - NotBlank: ~
+
+QuestBundle\Document\Shedule:
+    properties:
+        name:
+            - NotBlank: ~
+            - Length:
+                 min: 3
+                 max: 50
+        phone:
+            - NotBlank: ~
+            - Length:
+                 min: 7
+                 max: 15
+
+        email:
+            - Email:
+                 message: The email "{{ value }}" is not a valid email.
+                 checkMX: true
