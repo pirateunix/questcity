@@ -14,7 +14,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use QuestBundle\Document\Article;
 use Symfony\Component\HttpFoundation\Request;
 
-class PrivateArticleController extends Controller {
+class PrivateArticleController extends Controller
+{
 
     public function indexAction()
     {

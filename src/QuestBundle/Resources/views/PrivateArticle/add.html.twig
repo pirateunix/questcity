@@ -1,32 +1,36 @@
 {% extends '::Private/base.html.twig' %}
 
 {% block content %}
-   {{ form_start(form) }}
-   {{ form_errors(form) }}
+    {{ form_start(form) }}
+    {{ form_errors(form) }}
 
-   <form class="form-signin" role="form" action="" method="post">
-      <div class="modal-open">
-         <div class="modal-dialog" style="width:800px;">
-            <div class="modal-content">
-               <div class="modal-header">
-                  <h4 class="form-signin-heading">Новая статья</h4>
-               </div>
-               <div class="modal-body">
-                  <p>
-                     <label for="key" class="sr-only">Имя</label>
-                     {{ form_widget(form.key, {'attr': {'class': 'form-control', 'placeholder': 'Имя для ссылки'}}) }}
-                  </p>
-                  <p>
-                     {{ form_widget(form.content, {'attr': {'class': 'form-control', 'style': 'height:200px;'}}) }}
-                  </p>
-               </div>
-               <div class="modal-footer">
-                  {{ form_widget(form.save, {'attr': {'class': 'btn btn-lg btn-primary', 'type': 'submit'}, 'label': 'Сохранить'}) }}
-                  {{ form_end(form) }}
-               </div>
-            </div><!-- /.modal-content -->
-         </div><!-- /.modal-dialog -->
-      </div><!-- /.modal -->
-   </form>
+    <form class="form-signin" role="form" action="" method="post">
+        <div class="modal-open">
+            <div class="modal-dialog" style="width:800px;">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="form-signin-heading">Новая статья</h4>
+                    </div>
+                    <div class="modal-body">
+                        <p>
+                            <label for="key" class="sr-only">Имя</label>
+                            {{ form_widget(form.key, {'attr': {'class': 'form-control', 'placeholder': 'Имя для ссылки'}}) }}
+                        </p>
+
+                        <p>
+                            {{ form_widget(form.content, {'attr': {'class': 'form-control', 'style': 'height:200px;'}}) }}
+                        </p>
+                    </div>
+                    <div class="modal-footer">
+                        {{ form_widget(form.save, {'attr': {'class': 'btn btn-lg btn-primary', 'type': 'submit'}, 'label': 'Сохранить'}) }}
+                        {{ form_end(form) }}
+                    </div>
+                </div>
+                <!-- /.modal-content -->
+            </div>
+            <!-- /.modal-dialog -->
+        </div>
+        <!-- /.modal -->
+    </form>
 
 {% endblock %}

@@ -16,7 +16,7 @@ QuestBundle\Document\Quest:
         color:
                     - NotBlank: ~
 
-QuestBundle\Document\Shedule:
+QuestBundle\Document\Schedule:
     properties:
         name:
             - NotBlank: ~

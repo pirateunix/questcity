@@ -11,9 +11,11 @@ namespace QuestBundle\Form\Type;
 
 use Symfony\Component\Form\FormBuilderInterface;
 
-class ArticleAddType extends ArticleType {
-    public function buildForm(FormBuilderInterface $builder, array $options) {
+class ArticleAddType extends ArticleType
+{
+    public function buildForm(FormBuilderInterface $builder, array $options)
+    {
         parent::buildForm($builder, $options);
-        $builder->add('key','text');
+        $builder->add('key', 'text');
     }
 }

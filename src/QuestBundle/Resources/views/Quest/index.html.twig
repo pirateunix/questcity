@@ -1,13 +1,17 @@
 {% extends '::base.html.twig' %}
 
 {% block content %}
-   <div style="text-align:center">
-      <img src="/img/{{ quest.name }}-full.jpg" width="700"/>
-   </div>
+    <div style="text-align:center">
+        <img src="/img/{{ quest.name }}-full.jpg" width="700"/>
+    </div>
 
-   {{ include(template_from_string(quest.text)) }}
+    {{ include(template_from_string(quest.text)) }}
 
-   <div style="float:left; margin-top:10px;"><a href="{% if app.request.headers.get('referer') is not empty %}{{ app.request.headers.get('referer') }}{% else %}/{% endif %}">&#8592; назад</a></div>
-   <div style="float:right;"><a class="qu-quest__book-text" href="/schedule/">{% if quest.bookText is not empty %}{{  quest.bookText }}{% else %}забронировать{% endif %} &#8594;</a></div>
+    <div style="float:left; margin-top:10px;"><a
+                href="{% if app.request.headers.get('referer') is not empty %}{{ app.request.headers.get('referer') }}{% else %}/{% endif %}">
+            &#8592; назад</a></div>
+    <div style="float:right;"><a class="qu-quest__book-text"
+                                 href="/schedule/">{% if quest.bookText is not empty %}{{ quest.bookText }}{% else %}забронировать{% endif %}
+            &#8594;</a></div>
 
 {% endblock %}

@@ -11,10 +11,10 @@ namespace QuestBundle\Document;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 
 /**
- * @MongoDB\Document
+ * @MongoDB\Document(collection="quest")
  */
-
-class Quest {
+class Quest
+{
     /**
      * @MongoDB\String
      */
@@ -54,9 +54,7 @@ class Quest {
     /**
      * @MongoDB\Id
      */
-    /**
-     * @var MongoId $id
-     */
+
     protected $id;
 
     /**
@@ -271,12 +269,13 @@ class Quest {
     {
         return $this->title;
     }
+
     public function __construct()
     {
         $this->booked = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
-   /**
+
+    /**
      * Add booked
      *
      * @param QuestBundle\Document\Schedule $booked

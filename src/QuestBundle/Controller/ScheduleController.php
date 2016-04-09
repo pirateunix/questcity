@@ -14,8 +14,8 @@ use QuestBundle\Document\Schedule;
 use Symfony\Component\HttpFoundation\Request;
 
 
-
-class ScheduleController extends Controller {
+class ScheduleController extends Controller
+{
     public function indexAction($year, $month, $day)
     {
         $quests = $this->get('doctrine_mongodb')
@@ -31,7 +31,7 @@ class ScheduleController extends Controller {
 
         $time = strtotime("{$year}-{$month}-{$day}");
 
-        if($time < time()) {
+        if ($time < time()) {
             $time = time();
         }
 
@@ -43,7 +43,7 @@ class ScheduleController extends Controller {
             throw $this->createNotFoundException('No article found');
         }
 
-        return $this->render('QuestBundle:Schedule:index.html.twig', array('months'=> $months,
+        return $this->render('QuestBundle:Schedule:index.html.twig', array('months' => $months,
             'monthsRod' => $monthsRod,
             'currentMonth' => date('n', $time),
             'currentYear' => date('Y', $time),
@@ -56,6 +56,7 @@ class ScheduleController extends Controller {
             'success' => null));
 
     }
+
     public function formAction(Request $request)
     {
         $schedule = new Schedule();

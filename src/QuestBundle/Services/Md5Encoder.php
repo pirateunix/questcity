@@ -10,18 +10,22 @@ namespace QuestBundle\Services;
 
 use Symfony\Component\Security\Core\Encoder\PasswordEncoderInterface;
 
-class Md5Encoder implements PasswordEncoderInterface {
+class Md5Encoder implements PasswordEncoderInterface
+{
 
-    public function __construct() {
+    public function __construct()
+    {
     }
 
-    public function encodePassword($raw, $salt) {
-        dump($raw.$salt);
-        return md5($raw.$salt);
+    public function encodePassword($raw, $salt)
+    {
+        dump($raw . $salt);
+        return md5($raw . $salt);
     }
 
-    public function isPasswordValid($encoded, $raw, $salt) {
-        return md5($raw.$salt) == $encoded;
+    public function isPasswordValid($encoded, $raw, $salt)
+    {
+        return md5($raw . $salt) == $encoded;
     }
 
 }

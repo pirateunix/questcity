@@ -10,7 +10,8 @@ namespace QuestBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class ArticleController extends Controller {
+class ArticleController extends Controller
+{
     public function indexAction($key)
     {
         $article = $this->get('doctrine_mongodb')
@@ -22,6 +23,6 @@ class ArticleController extends Controller {
         }
 
         return $this->render('QuestBundle:Article:index.html.twig', array('article' => $article));
-     }
+    }
 
 }

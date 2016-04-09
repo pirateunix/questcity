@@ -14,7 +14,8 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-class ScheduleType extends AbstractType {
+class ScheduleType extends AbstractType
+{
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -24,8 +25,7 @@ class ScheduleType extends AbstractType {
             ->add('vk', 'text', ['required' => false])
             ->add('email', 'text', ['required' => false])
             ->add('cert', 'text', ['required' => false])
-            ->add('save', SubmitType::class)
-        ;
+            ->add('save', SubmitType::class);
     }
 
     public function configureOptions(OptionsResolver $resolver)

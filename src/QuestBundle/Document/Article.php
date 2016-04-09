@@ -11,10 +11,10 @@ namespace QuestBundle\Document;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 
 /**
- * @MongoDB\Document
+ * @MongoDB\Document(collection="article")
  */
-
-class Article {
+class Article
+{
     /**
      * @MongoDB\String
      */
@@ -25,9 +25,6 @@ class Article {
     protected $key;
     /**
      * @MongoDB\Id
-     */
-    /**
-     * @var MongoId $id
      */
     protected $id;
 

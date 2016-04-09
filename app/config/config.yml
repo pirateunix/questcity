@@ -65,6 +65,7 @@ doctrine:
         auto_mapping: true
 
 doctrine_mongodb:
+    auto_generate_hydrator_classes: true
     connections:
         default:
             server: mongodb://10.0.3.126:27017
@@ -73,7 +74,7 @@ doctrine_mongodb:
     document_managers:
         default:
             mappings:
-                QuestBundle: { type: annotation, dir: Documents/ }
+                QuestBundle: { type: annotation, dir: Document/ }
 
 # Swiftmailer Configuration
 swiftmailer:

@@ -15,7 +15,8 @@ use QuestBundle\Form\Type\QuestAddType;
 use Symfony\Component\HttpFoundation\Request;
 
 
-class PrivateQuestController extends Controller {
+class PrivateQuestController extends Controller
+{
 
     public function indexAction()
     {
@@ -69,7 +70,7 @@ class PrivateQuestController extends Controller {
             }
         }
 
-         return $this->render('QuestBundle:PrivateQuest:add.html.twig', array('form' => $form->createView(), 'active' => ""));
+        return $this->render('QuestBundle:PrivateQuest:add.html.twig', array('form' => $form->createView(), 'active' => ""));
     }
 
     public function deleteAction($key)

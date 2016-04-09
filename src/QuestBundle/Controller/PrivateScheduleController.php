@@ -10,7 +10,8 @@ namespace QuestBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class PrivateScheduleController extends Controller {
+class PrivateScheduleController extends Controller
+{
 
     public function indexAction()
     {
@@ -55,7 +56,7 @@ class PrivateScheduleController extends Controller {
     {
         $repository = $this->get('doctrine_mongodb')->getManager();
         $schedules = $repository->getRepository('QuestBundle:Schedule')
-            ->findBy(array('book_time' => ['$gte' => mktime(0,0,0), '$lte'=> mktime(23,59,59)]), array('book_time' => -1));
+            ->findBy(array('book_time' => ['$gte' => mktime(0, 0, 0), '$lte' => mktime(23, 59, 59)]), array('book_time' => -1));
 
         return $this->render('QuestBundle:PrivateSchedule:index.html.twig', array('schedules' => $schedules, 'active' => ""));
 

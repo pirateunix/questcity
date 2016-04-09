@@ -10,7 +10,8 @@ namespace QuestBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class QuestController extends Controller {
+class QuestController extends Controller
+{
 
     public function indexAction($key)
     {

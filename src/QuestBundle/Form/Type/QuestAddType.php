@@ -11,7 +11,8 @@ namespace QuestBundle\Form\Type;
 use Symfony\Component\Form\FormBuilderInterface;
 
 
-class QuestAddType extends QuestType{
+class QuestAddType extends QuestType
+{
 
     public function buildForm(FormBuilderInterface $builder, array $options)
     {

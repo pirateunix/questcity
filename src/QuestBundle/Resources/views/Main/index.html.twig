@@ -6,9 +6,9 @@
         <table class="qu-quests-table">
             <tr class="qu-quests-row">
                 {% for quest in quests %}
-                <td class="qu-quests-cell"><a href="/quest/{{ quest.name }}" title="{{ quest.title }}">
-                        <img src="/files/{{ quest.name }}.jpg" width="350" height="350"></a></td>
-                 {% endfor %}
+                    <td class="qu-quests-cell"><a href="/quest/{{ quest.name }}" title="{{ quest.title }}">
+                            <img src="/files/{{ quest.name }}.jpg" width="350" height="350"></a></td>
+                {% endfor %}
 
             </tr>
             <tr class="qu-quests-row">
@@ -16,4 +16,4 @@
             </tr>
         </table>
     </div>
-  {% endblock %}
+{% endblock %}

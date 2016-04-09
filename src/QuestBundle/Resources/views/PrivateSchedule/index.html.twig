@@ -1,39 +1,41 @@
 {% extends '::Private/base.html.twig' %}
 
 {% block content %}
-   <p>
-      <a class="btn btn-info btn-sm" href="/vilmins/schedule/today/" role="button">Сегодня</a>
-      <a class="btn btn-primary btn-sm" href="/vilmins/schedule/" role="button">Новые</a>
-      <a class="btn btn-success btn-sm" href="/vilmins/schedule/confirmed/" role="button">Подтвержденные</a>
-      <a class="btn btn-warning btn-sm" href="/vilmins/schedule/rejected/" role="button">Отклоненные</a>
-   </p>
-   {% if schedules is not empty %}
-   <div class="panel panel-default">
-      <table class="table">
-         {% for schedule in schedules %}
-         <tr>
-            <td>{% if schedule.quest is not empty %}{{ schedule.quest }}{% endif %}</td>
-            <td>{% if schedule.bookTime is not empty %}{{ date(schedule.bookTime)|date("d.m.Y H:i")}}{% endif %}</td>
-            <td>{% if schedule.name is not empty %}{{ schedule.name }}{% endif %}</td>
-            <td>{% if schedule.phone is not empty %}{{ schedule.phone }}{% endif %}</td>
-            <td>{% if schedule.vk is not empty %}{{ schedule.vk }}{% endif %}</td>
-            <td>{% if schedule.email is not empty %}{{ schedule.email }}{% endif %}</td>
-            <td>{% if schedule.cert is not empty %}{{ schedule.cert }}{% endif %}</td>
-            <td style="width:100px;">
-               {% if schedule.confirmed is empty and schedule.rejected is empty %}
-               <div class="btn-group">
-                  <button type="button" class="btn btn-default btn-xs _schedule_confirm" data-id="{{ schedule.id }}">
-                     <span class="glyphicon glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
-                  </button>
-                  <button type="button" class="btn btn-default btn-xs _schedule_reject" data-id="{{ schedule.id }}">
-                     <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
-                  </button>
-               </div>
-               {% endif %}
-            </td>
-         </tr>
-         {% endfor %}
-      </table>
-   </div>
-   {% endif %}
+    <p>
+        <a class="btn btn-info btn-sm" href="/vilmins/schedule/today/" role="button">Сегодня</a>
+        <a class="btn btn-primary btn-sm" href="/vilmins/schedule/" role="button">Новые</a>
+        <a class="btn btn-success btn-sm" href="/vilmins/schedule/confirmed/" role="button">Подтвержденные</a>
+        <a class="btn btn-warning btn-sm" href="/vilmins/schedule/rejected/" role="button">Отклоненные</a>
+    </p>
+    {% if schedules is not empty %}
+        <div class="panel panel-default">
+            <table class="table">
+                {% for schedule in schedules %}
+                    <tr>
+                        <td>{% if schedule.quest is not empty %}{{ schedule.quest }}{% endif %}</td>
+                        <td>{% if schedule.bookTime is not empty %}{{ date(schedule.bookTime)|date("d.m.Y H:i") }}{% endif %}</td>
+                        <td>{% if schedule.name is not empty %}{{ schedule.name }}{% endif %}</td>
+                        <td>{% if schedule.phone is not empty %}{{ schedule.phone }}{% endif %}</td>
+                        <td>{% if schedule.vk is not empty %}{{ schedule.vk }}{% endif %}</td>
+                        <td>{% if schedule.email is not empty %}{{ schedule.email }}{% endif %}</td>
+                        <td>{% if schedule.cert is not empty %}{{ schedule.cert }}{% endif %}</td>
+                        <td style="width:100px;">
+                            {% if schedule.confirmed is empty and schedule.rejected is empty %}
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-xs _schedule_confirm"
+                                            data-id="{{ schedule.id }}">
+                                        <span class="glyphicon glyphicon glyphicon-ok-circle" aria-hidden="true"></span>
+                                    </button>
+                                    <button type="button" class="btn btn-default btn-xs _schedule_reject"
+                                            data-id="{{ schedule.id }}">
+                                        <span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span>
+                                    </button>
+                                </div>
+                            {% endif %}
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+    {% endif %}
 {% endblock %}

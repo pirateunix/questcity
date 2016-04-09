@@ -7,13 +7,13 @@
  */
 
 namespace QuestBundle\Document;
+
 use Symfony\Component\Security\Core\User\UserInterface;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 
 /**
- * @MongoDB\Document
+ * @MongoDB\Document(collection="user")
  */
-
 class User implements UserInterface
 {
     /**
@@ -34,9 +34,6 @@ class User implements UserInterface
     protected $token_valid;
     /**
      * @MongoDB\Id
-     */
-    /**
-     * @var MongoId $id
      */
     protected $id;
 
@@ -92,7 +89,7 @@ class User implements UserInterface
      */
     public function getPassword()
     {
-       # $password = md5($this->password . '!*$#d');
+        # $password = md5($this->password . '!*$#d');
         return $this->password;
     }
 

@@ -12,9 +12,10 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as MongoDB;
 
 
 /**
- * @MongoDB\Document
+ * @MongoDB\Document(collection="schedule")
  */
-class Schedule {
+class Schedule
+{
     /**
      * @MongoDB\String
      */
@@ -53,9 +54,6 @@ class Schedule {
     protected $confirmed;
     /**
      * @MongoDB\Id
-     */
-    /**
-     * @var MongoId $id
      */
     protected $id;
     /**
@@ -271,12 +269,12 @@ class Schedule {
     {
         return $this->confirmed;
     }
-   /*public function __construct()
-    {
-        $this->info = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-    */
-   
+    /*public function __construct()
+     {
+         $this->info = new \Doctrine\Common\Collections\ArrayCollection();
+     }
+     */
+
 
     /**
      * Set info
